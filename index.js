@@ -28,6 +28,7 @@ const sortReposByUpdateDate = (data) => {
     }).slice(0, 5);
 };
 
+// Get repos with more than 5 stars
 const getReposWithFiveStars = (data) => {
     return data.filter(data => data.stars > 5);
 }
@@ -46,14 +47,18 @@ const getRepoData = async (url) => {
 (async () => {
     const data = await getRepoData(url);
 
+    // Write whole data json
     const wholeDataText = JSON.stringify(data);
     fs.writeFileSync('./data/whole_data.json', wholeDataText);
 
+    // Write only the 5 repos (5)
     const updatedRecentlyText = JSON.stringify(sortReposByUpdateDate(data));
     fs.writeFileSync('./data/sorted_by_update_data.json', updatedRecentlyText);
 
+    // Write only repos with more than 5 stars
     const fiveStarsText = JSON.stringify(getReposWithFiveStars(data));
     fs.writeFileSync('./data/five_stars_data.json', fiveStarsText);
 
-    console.log("Total stars: " + getStarsSum(data));
+    // Write only the total stars
+    fs.writeFileSync('./data/stars_sum.txt', "Total stars: " + getStarsSum(data).toString());
 })();
