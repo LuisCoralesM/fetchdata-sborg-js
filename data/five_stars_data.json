@@ -1,0 +1,74 @@
+[
+  {
+    "repo_name": "hapistrano",
+    "url": "https://github.com/stackbuilders/hapistrano",
+    "updated_at": "2022-03-22T23:02:03Z",
+    "stars": 97
+  },
+  {
+    "repo_name": "dotenv-hs",
+    "url": "https://github.com/stackbuilders/dotenv-hs",
+    "updated_at": "2022-03-18T21:25:51Z",
+    "stars": 45
+  },
+  {
+    "repo_name": "openssh-github-keys",
+    "url": "https://github.com/stackbuilders/openssh-github-keys",
+    "updated_at": "2022-03-14T05:10:43Z",
+    "stars": 20
+  },
+  {
+    "repo_name": "sshd-lint",
+    "url": "https://github.com/stackbuilders/sshd-lint",
+    "updated_at": "2021-10-18T18:04:23Z",
+    "stars": 6
+  },
+  {
+    "repo_name": "twitter-feed",
+    "url": "https://github.com/stackbuilders/twitter-feed",
+    "updated_at": "2021-01-14T20:58:48Z",
+    "stars": 17
+  },
+  {
+    "repo_name": "inflections-hs",
+    "url": "https://github.com/stackbuilders/inflections-hs",
+    "updated_at": "2020-09-26T19:03:57Z",
+    "stars": 34
+  },
+  {
+    "repo_name": "octohat",
+    "url": "https://github.com/stackbuilders/octohat",
+    "updated_at": "2020-07-17T16:28:56Z",
+    "stars": 17
+  },
+  {
+    "repo_name": "atomic-write",
+    "url": "https://github.com/stackbuilders/atomic-write",
+    "updated_at": "2020-02-25T04:23:26Z",
+    "stars": 16
+  },
+  {
+    "repo_name": "railblazer",
+    "url": "https://github.com/stackbuilders/railblazer",
+    "updated_at": "2019-08-13T15:00:22Z",
+    "stars": 18
+  },
+  {
+    "repo_name": "propel",
+    "url": "https://github.com/stackbuilders/propel",
+    "updated_at": "2019-08-13T14:44:41Z",
+    "stars": 9
+  },
+  {
+    "repo_name": "stub_shell",
+    "url": "https://github.com/stackbuilders/stub_shell",
+    "updated_at": "2017-06-05T19:58:59Z",
+    "stars": 7
+  },
+  {
+    "repo_name": "pivotal_planning_poker",
+    "url": "https://github.com/stackbuilders/pivotal_planning_poker",
+    "updated_at": "2017-05-21T04:36:44Z",
+    "stars": 6
+  }
+]

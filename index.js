@@ -28,6 +28,10 @@ const sortReposByUpdateDate = (data) => {
     }).slice(0, 5);
 };
 
+const getReposWithFiveStars = (data) => {
+    return data.filter(data => data.stars > 5);
+}
+
 // From the GitHub API response, get the needed data
 const getRepoData = async (url) => {
     const data = await fetchData(url);
@@ -48,6 +52,8 @@ const getRepoData = async (url) => {
     const updatedRecentlyText = JSON.stringify(sortReposByUpdateDate(data));
     fs.writeFileSync('./data/sorted_by_update_data.json', updatedRecentlyText);
 
+    const fiveStarsText = JSON.stringify(getReposWithFiveStars(data));
+    fs.writeFileSync('./data/five_stars_data.json', fiveStarsText);
 
-    console.log(sortReposByUpdateDate(data));
+    console.log("Total stars: " + getStarsSum(data));
 })();
