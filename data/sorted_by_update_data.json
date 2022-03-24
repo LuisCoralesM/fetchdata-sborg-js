@@ -1,0 +1,32 @@
+[
+  {
+    "repo_name": "hapistrano",
+    "url": "https://github.com/stackbuilders/hapistrano",
+    "updated_at": "2022-03-22T23:02:03Z",
+    "stars": 97
+  },
+  {
+    "repo_name": "dotenv-hs",
+    "url": "https://github.com/stackbuilders/dotenv-hs",
+    "updated_at": "2022-03-18T21:25:51Z",
+    "stars": 45
+  },
+  {
+    "repo_name": "openssh-github-keys",
+    "url": "https://github.com/stackbuilders/openssh-github-keys",
+    "updated_at": "2022-03-14T05:10:43Z",
+    "stars": 20
+  },
+  {
+    "repo_name": "pattern-matching-wot",
+    "url": "https://github.com/stackbuilders/pattern-matching-wot",
+    "updated_at": "2022-02-06T02:20:49Z",
+    "stars": 0
+  },
+  {
+    "repo_name": "just-haskell",
+    "url": "https://github.com/stackbuilders/just-haskell",
+    "updated_at": "2022-02-06T02:16:26Z",
+    "stars": 0
+  }
+]
