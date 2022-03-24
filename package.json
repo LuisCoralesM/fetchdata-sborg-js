@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "jest"
   },
   "repository": {
@@ -23,6 +25,6 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "node-fetch": "^3.2.3"
   }
 }
