@@ -1,4 +1,5 @@
 const axios = require("axios");
+const fs = require("fs")
 
 // Fetch the API url
 const fetchData = async (url) => {
@@ -28,36 +29,37 @@ module.exports.getReposWithFiveStars = (data) => {
 module.exports.getRepoData = async (url) => {
     let urlBuilder = (page) => url + `?per_page=100&page=${page}`;
 
-    const recursiveData = async (page = 1, dataFetch = []) => {   
+    const recursiveData = async (page = 1, dataFetch) => {   
         const fetchedData = await fetchData(urlBuilder(page));
-        console.log(fetchedData);
 
-        console.log('RUN', fetchedData.length, dataFetch.length)
-        if (fetchedData.length === 0) {
-            console.log("AA");
-            return dataFetch
-        } else {
-            await recursiveData(page + 1, dataFetch.concat(fetchedData))
-        }
+        if (fetchedData.length === 0) return dataFetch;
+
+        return await recursiveData(page + 1, dataFetch.concat(fetchedData));
     }
-    const datass = await recursiveData(1, [])
+    
+    const fetchedData = await recursiveData(1, []);
 
-    console.log(datass)
-    return []
-    // let url2 = new URL(url);
-    // const data = [];
+    return fetchedData.map(repo => ({
+        repo_name: repo.full_name.split("/")[1],
+        url: repo.html_url,
+        updated_at: repo.updated_at,
+        stars: repo.stargazers_count
+    }));
+}
 
-    ///   const fetchedData = await fetchData(url
+// From the mock files path
+module.exports.getMockedRepoData = (dire) => {
+    let path = (page) => dire + page + ".json";
 
-    // if(Number(url2.searchParams.get('per_page')) === data.length)
-    // {
+    const recursiveData = (page = 1, dataFetch = []) => {  
+        
+        const getData = fs.readFileSync(path(page));
+        const data = JSON.parse(getData);
 
-    // }
+        if (data.length === 0) return dataFetch;
 
-    // return fetchedData.map(repo => ({
-    //     repo_name: repo.full_name.split("/")[1],
-    //     url: repo.html_url,
-    //     updated_at: repo.updated_at,
-    //     stars: repo.stargazers_count
-    // }));
+        return recursiveData(page + 1, dataFetch.concat(data));
+    }
+
+    return recursiveData(1, []);
 }

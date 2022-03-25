@@ -15,11 +15,6 @@ describe('Validation of data and sorts', function() {
     test("if the total stars sum is added correctly", () => {
         expect(getStarsSum(data)).toBe(592);
     });
-
-    test("if the total stars sum is added correctly", () => {
-        expect(getStarsSum(data)).toBe(319);
-    });
-
     
     it("", async () => {
         let data = await getRepoData(url);
