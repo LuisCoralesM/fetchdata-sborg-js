@@ -6,11 +6,11 @@ const fs = require("fs");
  * npm run start (run project)
  */
 
-const url = "https://api.github.com/orgs/stackbuilders/repos";
+const url = "https://api.github.com/orgs/stackbuilders/repos?per_page=100";
 
 (async () => {
     const data = await getRepoData(url);
-    
+
     // Write whole data json
     const wholeDataText = JSON.stringify(data);
     fs.writeFileSync('./data/whole_data.json', wholeDataText);

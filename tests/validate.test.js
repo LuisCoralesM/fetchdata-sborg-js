@@ -1,15 +1,30 @@
 const { getRepoData, getReposWithFiveStars, getStarsSum, sortReposByUpdateDate } = require("../src/index.js");
 
-const url = "https://api.github.com/orgs/stackbuilders/repos";
+const url = "https://api.github.com/orgs/stackbuilders/repos?per_page=100";
+
+let data;
 
 
-describe('Circle class', function() {
-    describe('area is calculated when', function() {
-        test("", async () => {
-            let data = await getRepoData(url);
-            console.log(data.length);
-            expect(data.length).toBeGreaterThanOrEqual(1);
-        });
+describe('Validation of data and sorts', function() {
+
+    test("if the fetching returns something", async () => {
+        data = await getRepoData(url);
+        expect(data).toBeTruthy();
+    });
+
+    test("if the total stars sum is added correctly", () => {
+        expect(getStarsSum(data)).toBe(592);
+    });
+
+    test("if the total stars sum is added correctly", () => {
+        expect(getStarsSum(data)).toBe(319);
+    });
+
+    
+    it("", async () => {
+        let data = await getRepoData(url);
+        console.log(data.length);
+        expect(data.length).toBeGreaterThanOrEqual(1);
     });
 });
 

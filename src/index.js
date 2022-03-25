@@ -26,8 +26,17 @@ module.exports.getReposWithFiveStars = (data) => {
 
 // From the GitHub API response, get the needed data
 module.exports.getRepoData = async (url) => {
-    const data = await fetchData(url);
-    return data.map(repo => ({
+    let url2 = new URL(url);
+    const data = [];
+
+    const fetchedData = await fetchData(url);
+    
+    if(Number(url2.searchParams.get('per_page')) === data.length)
+    {
+        
+    }
+
+    return fetchedData.map(repo => ({
         repo_name: repo.full_name.split("/")[1], 
         url: repo.html_url, 
         updated_at: repo.updated_at, 
