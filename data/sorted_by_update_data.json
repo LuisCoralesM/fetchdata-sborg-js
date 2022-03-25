@@ -1,1 +1,32 @@
-[{"repo_name":"hapistrano","url":"https://github.com/stackbuilders/hapistrano","updated_at":"2022-03-22T23:02:03Z","stars":97},{"repo_name":"dotenv-hs","url":"https://github.com/stackbuilders/dotenv-hs","updated_at":"2022-03-18T21:25:51Z","stars":45},{"repo_name":"openssh-github-keys","url":"https://github.com/stackbuilders/openssh-github-keys","updated_at":"2022-03-14T05:10:43Z","stars":20},{"repo_name":"rollbar-haskell","url":"https://github.com/stackbuilders/rollbar-haskell","updated_at":"2022-03-09T15:36:17Z","stars":5},{"repo_name":"react-native-spotlight-tour","url":"https://github.com/stackbuilders/react-native-spotlight-tour","updated_at":"2022-02-27T07:15:27Z","stars":35}]
+[
+    {
+        "repo_name": "hapistrano",
+        "url": "https://github.com/stackbuilders/hapistrano",
+        "updated_at": "2022-03-22T23:02:03Z",
+        "stars": 97
+    },
+    {
+        "repo_name": "dotenv-hs",
+        "url": "https://github.com/stackbuilders/dotenv-hs",
+        "updated_at": "2022-03-18T21:25:51Z",
+        "stars": 45
+    },
+    {
+        "repo_name": "openssh-github-keys",
+        "url": "https://github.com/stackbuilders/openssh-github-keys",
+        "updated_at": "2022-03-14T05:10:43Z",
+        "stars": 20
+    },
+    {
+        "repo_name": "rollbar-haskell",
+        "url": "https://github.com/stackbuilders/rollbar-haskell",
+        "updated_at": "2022-03-09T15:36:17Z",
+        "stars": 5
+    },
+    {
+        "repo_name": "react-native-spotlight-tour",
+        "url": "https://github.com/stackbuilders/react-native-spotlight-tour",
+        "updated_at": "2022-02-27T07:15:27Z",
+        "stars": 35
+    }
+]

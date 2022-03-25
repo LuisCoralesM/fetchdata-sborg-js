@@ -26,20 +26,38 @@ module.exports.getReposWithFiveStars = (data) => {
 
 // From the GitHub API response, get the needed data
 module.exports.getRepoData = async (url) => {
-    let url2 = new URL(url);
-    const data = [];
+    let urlBuilder = (page) => url + `?per_page=100&page=${page}`;
 
-    const fetchedData = await fetchData(url);
-    
-    if(Number(url2.searchParams.get('per_page')) === data.length)
-    {
-        
+    const recursiveData = async (page = 1, dataFetch = []) => {   
+        const fetchedData = await fetchData(urlBuilder(page));
+        console.log(fetchedData);
+
+        console.log('RUN', fetchedData.length, dataFetch.length)
+        if (fetchedData.length === 0) {
+            console.log("AA");
+            return dataFetch
+        } else {
+            await recursiveData(page + 1, dataFetch.concat(fetchedData))
+        }
     }
+    const datass = await recursiveData(1, [])
 
-    return fetchedData.map(repo => ({
-        repo_name: repo.full_name.split("/")[1], 
-        url: repo.html_url, 
-        updated_at: repo.updated_at, 
-        stars: repo.stargazers_count
-    }));
+    console.log(datass)
+    return []
+    // let url2 = new URL(url);
+    // const data = [];
+
+    ///   const fetchedData = await fetchData(url
+
+    // if(Number(url2.searchParams.get('per_page')) === data.length)
+    // {
+
+    // }
+
+    // return fetchedData.map(repo => ({
+    //     repo_name: repo.full_name.split("/")[1],
+    //     url: repo.html_url,
+    //     updated_at: repo.updated_at,
+    //     stars: repo.stargazers_count
+    // }));
 }
