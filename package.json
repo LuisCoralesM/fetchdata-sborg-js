@@ -2,14 +2,13 @@
   "name": "fetchdata-sborg",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "app.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "start": "node app.js",
+    "test": "npx jest tests/validate.test.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +24,6 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
-    "node-fetch": "^3.2.3"
+    "axios": "^0.26.1"
   }
 }
