@@ -7,7 +7,7 @@ const fs = require("fs");
  */
 
 const url = "https://api.github.com/orgs/stackbuilders/repos";
-const mockPath = "./mock/data";
+const mockPath = "./mock/data"; // To avoid requests limit timers using getMockedRepoData function
 
 (async () => {
     //const data = await getRepoData(url);

@@ -34,9 +34,9 @@ module.exports.getRepoData = async (url) => {
 
         if (fetchedData.length === 0) return dataFetch;
 
-        return await recursiveData(page + 1, dataFetch.concat(fetchedData));
+        return recursiveData(page + 1, dataFetch.concat(fetchedData));
     }
-    
+
     const fetchedData = await recursiveData(1, []);
 
     return fetchedData.map(repo => ({
@@ -47,7 +47,7 @@ module.exports.getRepoData = async (url) => {
     }));
 }
 
-// From the mock files path
+// From the mock files path (ONLY FOR TESTING TO AVOID REQUESTS LIMIT FROM API)
 module.exports.getMockedRepoData = (dire) => {
     let path = (page) => dire + page + ".json";
 

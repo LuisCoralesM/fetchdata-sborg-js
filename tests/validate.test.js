@@ -1,25 +1,27 @@
-const { getRepoData, getReposWithFiveStars, getStarsSum, sortReposByUpdateDate } = require("../src/index.js");
+const { getReposWithFiveStars, getStarsSum, sortReposByUpdateDate } = require("../src/index.js");
+const fs = require("fs");
 
-const url = "https://api.github.com/orgs/stackbuilders/repos?per_page=100";
+let text = fs.readFileSync("./data/whole_data.json");
+let data = JSON.parse(text);
 
-let data;
-
-
-describe('Validation of data and sorts', function() {
-
+describe("Validation of data and sorts", function() {
     test("if the fetching returns something", async () => {
-        data = await getRepoData(url);
         expect(data).toBeTruthy();
+    });
+
+    test("if all repos have more than 5 stars", async () => {
+        let sortedData = getReposWithFiveStars(data);
+        const checkStars = (sortedData) => sortedData.every(value => value.stars > 5);
+        expect(checkStars(sortedData)).toBe(true);
     });
 
     test("if the total stars sum is added correctly", () => {
         expect(getStarsSum(data)).toBe(592);
     });
-    
-    it("", async () => {
-        let data = await getRepoData(url);
-        console.log(data.length);
-        expect(data.length).toBeGreaterThanOrEqual(1);
+
+    test("if the first repo update date is latest than the next one", () => {
+        let sortedData = sortReposByUpdateDate(data);
+        const checkDates = (sortedData) => new Date(sortedData[0].updated_at) >= new Date(sortedData[1].updated_at) ? true : false;
+        expect(checkDates(sortedData)).toBe(true);
     });
 });
-
