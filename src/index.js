@@ -1,5 +1,5 @@
 const axios = require("axios");
-const fs = require("fs")
+const fs = require("fs");
 
 // Fetch the API url
 const fetchData = async (url) => {
