@@ -1,6 +1,6 @@
-# Fetch Stack Builders Repos
+# Fetch GitHub Organization Repos
 
-A JavaScript pet project that retrieve important info from the [Stack Builders](https://github.com/stackbuilders) organization repositories by using the [GitHub API](https://docs.github.com/en/rest).
+A JavaScript pet project that retrieve important info from the [Stack Builders](https://github.com/stackbuilders) organization (or any org) repositories by using the [GitHub API](https://docs.github.com/en/rest).
 
 ## Features
 
